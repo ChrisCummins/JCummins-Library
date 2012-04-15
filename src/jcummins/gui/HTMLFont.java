@@ -59,7 +59,7 @@ public class HTMLFont {
 		isBold = b;
 		updateStrings();
 	}
-	
+
 	public void setBold() {
 		isBold = !isBold;
 		updateStrings();
@@ -74,12 +74,12 @@ public class HTMLFont {
 		isItalic = !isItalic;
 		updateStrings();
 	}
-	
+
 	public void setUnderlined(boolean b) {
 		isUnderlined = b;
 		updateStrings();
 	}
-	
+
 	public void setUnderlined() {
 		isUnderlined = !isUnderlined;
 		updateStrings();
@@ -106,6 +106,11 @@ public class HTMLFont {
 
 	public String format(String msg) {
 		return start + msg + end;
+	}
+
+	public String unformat(String msg) {
+		return msg.substring(start.length(),
+				msg.length() - end.length());
 	}
 
 	private void updateStrings() {

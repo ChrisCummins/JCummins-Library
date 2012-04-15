@@ -72,9 +72,7 @@ public abstract class JComboBoxUtils {
 	@SuppressWarnings("unchecked")
 	public static void updateContents(
 			@SuppressWarnings("rawtypes") JComboBox box, Object[] options) {
-		if (box.getItemCount() > 0)
-			for (int i = box.getItemCount() - 1; i <= 0; i--)
-				box.remove(i);
+		box.removeAllItems();
 		for (Object o : options)
 			box.addItem(o);
 	}
